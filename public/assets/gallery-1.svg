@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g1Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#19070a" />
+      <stop offset="50%" stop-color="#380d14" />
+      <stop offset="100%" stop-color="#140508" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8c6a23" />
+      <stop offset="50%" stop-color="#fad06c" />
+      <stop offset="100%" stop-color="#a47d2b" />
+    </linearGradient>
+    <radialGradient id="chandelierGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#ffe8a3" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#d4af37" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#140508" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g1Bg)" />
+  <circle cx="400" cy="240" r="280" fill="url(#chandelierGlow)" />
+  
+  <!-- Ceiling Fabric Draping Sunburst -->
+  <g stroke="url(#gold)" stroke-width="1.5" opacity="0.65">
+    <line x1="400" y1="120" x2="60" y2="280" />
+    <line x1="400" y1="120" x2="160" y2="280" />
+    <line x1="400" y1="120" x2="280" y2="280" />
+    <line x1="400" y1="120" x2="520" y2="280" />
+    <line x1="400" y1="120" x2="640" y2="280" />
+    <line x1="400" y1="120" x2="740" y2="280" />
+  </g>
+  <!-- Fabric Swags -->
+  <path d="M 60 280 Q 200 320 400 290 Q 600 320 740 280" fill="#58111a" opacity="0.8" />
+  <path d="M 120 300 Q 260 340 400 310 Q 540 340 680 300" fill="#751823" opacity="0.7" />
+
+  <!-- Center Luxury Crystal Chandelier -->
+  <line x1="400" y1="60" x2="400" y2="180" stroke="url(#gold)" stroke-width="3" />
+  <circle cx="400" cy="190" r="28" fill="#ffd978" />
+  <circle cx="400" cy="190" r="42" fill="#ffeaa7" opacity="0.3" />
+  <ellipse cx="400" cy="210" rx="60" ry="12" fill="none" stroke="url(#gold)" stroke-width="2.5" />
+  <path d="M 350 210 Q 400 260 450 210" fill="none" stroke="#fff" stroke-width="2" />
+  <path d="M 370 210 Q 400 245 430 210" fill="none" stroke="#fff" stroke-width="1.8" />
+
+  <!-- Aisle Runner with Floral Borders -->
+  <polygon points="340,360 460,360 560,600 240,600" fill="#200508" stroke="#d4af37" stroke-width="2" />
+  <polygon points="365,360 435,360 510,600 290,600" fill="#8a1724" />
+  <!-- Golden Floral Lantern Pillars Along Aisle -->
+  <g fill="url(#gold)">
+    <rect x="260" y="440" width="16" height="70" rx="3" />
+    <circle cx="268" cy="430" r="10" fill="#ffe082" />
+    <rect x="524" y="440" width="16" height="70" rx="3" />
+    <circle cx="532" cy="430" r="10" fill="#ffe082" />
+  </g>
+
+  <!-- Tag Overlay -->
+  <rect x="30" y="30" width="230" height="34" rx="17" fill="rgba(15, 6, 8, 0.85)" stroke="#d4af37" stroke-width="1.2" />
+  <text x="145" y="52" fill="#fad06c" font-family="'DM Sans', sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">WEDDING SHAMIANA</text>
+</svg>

@@ -1,0 +1,7 @@
+{
+  "name": "Indian Tent House",
+  "description": "High-end tent, royal wedding decoration, stage, and grand event setup services with bespoke planning and real-time consultation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

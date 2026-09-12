@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g2Bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c1219" />
+      <stop offset="60%" stop-color="#182330" />
+      <stop offset="100%" stop-color="#080c10" />
+    </linearGradient>
+    <linearGradient id="curveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="silverTruss" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748b" />
+      <stop offset="50%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g2Bg)" />
+
+  <!-- Outer German Hangar Aluminum Arches -->
+  <path d="M 60 560 Q 400 60 740 560" fill="none" stroke="url(#silverTruss)" stroke-width="18" stroke-linecap="round" />
+  <path d="M 100 560 Q 400 110 700 560" fill="none" stroke="#94a3b8" stroke-width="6" opacity="0.6" />
+  <!-- Internal Truss Diagonal Bracing -->
+  <path d="M 120 540 L 160 480 L 220 500 L 270 420 L 340 440 L 400 360 L 460 440 L 530 420 L 580 500 L 640 480 L 680 540" fill="none" stroke="#cbd5e1" stroke-width="2" opacity="0.4" />
+
+  <!-- Waterproof Translucent Canopy Fabric Underlit -->
+  <path d="M 130 560 Q 400 150 670 560 L 730 560 Q 400 80 70 560 Z" fill="rgba(245, 158, 11, 0.08)" />
+
+  <!-- Warm & Amber Uplighting Floods on Arches -->
+  <g opacity="0.8">
+    <!-- Spotlights -->
+    <circle cx="150" cy="540" r="12" fill="#fbbf24" />
+    <path d="M 150 540 L 280 280 L 340 340 Z" fill="rgba(251, 191, 36, 0.2)" />
+    
+    <circle cx="650" cy="540" r="12" fill="#fbbf24" />
+    <path d="M 650 540 L 520 280 L 460 340 Z" fill="rgba(251, 191, 36, 0.2)" />
+  </g>
+
+  <!-- Central Fairy Light Chandelier Rig -->
+  <ellipse cx="400" cy="300" rx="90" ry="18" fill="none" stroke="#fef08a" stroke-width="2" />
+  <path d="M 320 300 Q 400 360 480 300" fill="none" stroke="#fef08a" stroke-width="2.5" />
+  <circle cx="400" cy="300" r="16" fill="#fef08a" />
+
+  <!-- Stage Decking & Golden Cocktail High-Tables -->
+  <rect x="200" y="480" width="400" height="80" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+  <line x1="220" y1="480" x2="580" y2="480" stroke="#f59e0b" stroke-width="3" />
+
+  <!-- Badge -->
+  <rect x="30" y="30" width="250" height="34" rx="17" fill="rgba(12, 18, 25, 0.85)" stroke="#60a5fa" stroke-width="1.2" />
+  <text x="155" y="52" fill="#93c5fd" font-family="'DM Sans', sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">GERMAN HANGAR SETUP</text>
+</svg>

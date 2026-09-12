@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g5Bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1805" />
+      <stop offset="50%" stop-color="#4a2d08" />
+      <stop offset="100%" stop-color="#1c0f02" />
+    </linearGradient>
+    <radialGradient id="sunburst" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#1c0f02" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="yellowDrapes" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g5Bg)" />
+  <rect width="800" height="600" fill="url(#sunburst)" />
+
+  <!-- Yellow & Orange Fabric Tent Pavilion Canopy (Haldi Theme) -->
+  <path d="M 120 480 L 400 120 L 680 480 Z" fill="#382106" stroke="#fbbf24" stroke-width="3" />
+  
+  <!-- Radiating Vibrant Marigold & Lime Fabric Panels -->
+  <path d="M 400 120 L 200 480 L 280 480 Z" fill="url(#yellowDrapes)" opacity="0.85" />
+  <path d="M 400 120 L 360 480 L 440 480 Z" fill="#ea580c" opacity="0.85" />
+  <path d="M 400 120 L 520 480 L 600 480 Z" fill="url(#yellowDrapes)" opacity="0.85" />
+
+  <!-- Cascading Marigold Floral Strings -->
+  <g stroke="#f59e0b" stroke-width="6" stroke-linecap="round" stroke-dasharray="3 5">
+    <line x1="160" y1="280" x2="160" y2="480" />
+    <line x1="220" y1="220" x2="220" y2="480" />
+    <line x1="300" y1="180" x2="300" y2="480" />
+    <line x1="500" y1="180" x2="500" y2="480" />
+    <line x1="580" y1="220" x2="580" y2="480" />
+    <line x1="640" y1="280" x2="640" y2="480" />
+  </g>
+
+  <!-- Brass Urli & Traditional Floral Basin Focal Point -->
+  <ellipse cx="400" cy="460" rx="90" ry="24" fill="#b45309" stroke="#fde047" stroke-width="2.5" />
+  <ellipse cx="400" cy="455" rx="75" ry="18" fill="#d97706" />
+  <!-- Floating petals in urli -->
+  <circle cx="380" cy="454" r="5" fill="#facc15" />
+  <circle cx="410" cy="456" r="6" fill="#f43f5e" />
+  <circle cx="430" cy="453" r="5" fill="#facc15" />
+  <circle cx="360" cy="455" r="4" fill="#f43f5e" />
+
+  <!-- Lawn Seating Cushions & Bohemian Low Tables -->
+  <rect x="180" y="490" width="90" height="25" rx="8" fill="#f59e0b" stroke="#fef08a" stroke-width="1.5" />
+  <rect x="530" y="490" width="90" height="25" rx="8" fill="#ea580c" stroke="#fef08a" stroke-width="1.5" />
+
+  <!-- Badge -->
+  <rect x="30" y="30" width="250" height="34" rx="17" fill="rgba(42, 24, 5, 0.85)" stroke="#fbbf24" stroke-width="1.2" />
+  <text x="155" y="52" fill="#fde047" font-family="'DM Sans', sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">OUTDOOR HALDI & FIESTA</text>
+</svg>

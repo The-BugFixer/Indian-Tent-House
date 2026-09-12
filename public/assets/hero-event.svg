@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14080b" />
+      <stop offset="35%" stop-color="#2a0d14" />
+      <stop offset="70%" stop-color="#4a151b" />
+      <stop offset="100%" stop-color="#7a251c" />
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="82%" cy="24%" r="35%">
+      <stop offset="0%" stop-color="#e09242" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="#b85324" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#2a0d14" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="75%" r="45%">
+      <stop offset="0%" stop-color="#ffd27d" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#a62c20" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0e0406" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="goldTruss" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fae8b2" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#8a6d1a" />
+    </linearGradient>
+    <linearGradient id="velvetTent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#54121a" />
+      <stop offset="100%" stop-color="#24070a" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="1600" height="900" fill="url(#skyGrad)" />
+  <circle cx="1320" cy="210" r="180" fill="url(#sunGlow)" />
+  <circle cx="1320" cy="210" r="95" fill="#fce4b8" fill-opacity="0.85" filter="url(#softGlow)" />
+
+  <!-- Stars / Ambient Fairy Lights in Sky -->
+  <g opacity="0.65" fill="#fff5ea">
+    <circle cx="150" cy="120" r="1.5" />
+    <circle cx="280" cy="80" r="1.2" />
+    <circle cx="420" cy="160" r="1.8" />
+    <circle cx="560" cy="90" r="1.2" />
+    <circle cx="710" cy="140" r="2" />
+    <circle cx="890" cy="70" r="1.5" />
+    <circle cx="1050" cy="130" r="2.2" />
+    <circle cx="1180" cy="85" r="1.2" />
+    <circle cx="1480" cy="160" r="1.8" />
+    <circle cx="220" cy="240" r="1.3" />
+    <circle cx="360" cy="290" r="1.5" />
+    <circle cx="640" cy="220" r="1.8" />
+  </g>
+
+  <!-- Rolling Dunes / Lawn Base -->
+  <path d="M 0 760 Q 400 710 850 750 T 1600 730 L 1600 900 L 0 900 Z" fill="#180709" />
+  <path d="M 0 810 Q 500 780 1050 820 T 1600 790 L 1600 900 L 0 900 Z" fill="#0c0304" />
+
+  <!-- Center Ambient Glow -->
+  <ellipse cx="800" cy="720" rx="650" ry="320" fill="url(#centerGlow)" />
+
+  <!-- GRAND CANOPY ARCHITECTURE (Silhouette & Highlight) -->
+  <!-- Outer Decorative Pavilion Spans -->
+  <g opacity="0.85">
+    <!-- Left Wing Pavilion -->
+    <path d="M 220 780 L 420 540 L 620 780 Z" fill="#320c11" opacity="0.7" />
+    <path d="M 250 780 Q 420 610 590 780" fill="none" stroke="#d4af37" stroke-width="2.5" opacity="0.5" />
+    <line x1="420" y1="540" x2="420" y2="780" stroke="#d4af37" stroke-width="2" opacity="0.6" />
+
+    <!-- Right Wing Pavilion -->
+    <path d="M 980 780 L 1180 540 L 1380 780 Z" fill="#320c11" opacity="0.7" />
+    <path d="M 1010 780 Q 1180 610 1350 780" fill="none" stroke="#d4af37" stroke-width="2.5" opacity="0.5" />
+    <line x1="1180" y1="540" x2="1180" y2="780" stroke="#d4af37" stroke-width="2" opacity="0.6" />
+  </g>
+
+  <!-- Main Center Majestic Shamiana / Tent -->
+  <g id="mainCanopy">
+    <!-- Inner Tent Fabric -->
+    <path d="M 450 790 L 800 420 L 1150 790 Z" fill="url(#velvetTent)" />
+    
+    <!-- Scalloped Layered Fabric Valances -->
+    <path d="M 520 790 Q 800 580 1080 790" fill="#6a1721" opacity="0.4" />
+    <path d="M 570 790 Q 800 640 1030 790" fill="#8f212d" opacity="0.3" />
+
+    <!-- Architectural Truss & Pillars (Gold Accent) -->
+    <!-- Center Crown Finial -->
+    <circle cx="800" cy="416" r="14" fill="#ffd978" filter="url(#softGlow)" />
+    <circle cx="800" cy="416" r="8" fill="#fff0c7" />
+
+    <!-- Structural A-Frame Golden Struts -->
+    <line x1="800" y1="420" x2="450" y2="790" stroke="url(#goldTruss)" stroke-width="6" stroke-linecap="round" />
+    <line x1="800" y1="420" x2="1150" y2="790" stroke="url(#goldTruss)" stroke-width="6" stroke-linecap="round" />
+    <line x1="800" y1="420" x2="800" y2="790" stroke="url(#goldTruss)" stroke-width="5" />
+
+    <!-- Grand Arch Ribs -->
+    <path d="M 410 820 Q 800 480 1190 820" fill="none" stroke="#fce4b8" stroke-width="14" stroke-linecap="round" opacity="0.9" />
+    <path d="M 460 790 Q 800 530 1140 790" fill="none" stroke="#d4af37" stroke-width="6" stroke-linecap="round" opacity="0.8" />
+    
+    <!-- Cross Tie Beam -->
+    <line x1="580" y1="670" x2="1020" y2="670" stroke="#fce4b8" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Upright Golden Side Support Columns -->
+    <line x1="520" y1="670" x2="520" y2="820" stroke="url(#goldTruss)" stroke-width="6" />
+    <line x1="1080" y1="670" x2="1080" y2="820" stroke="url(#goldTruss)" stroke-width="6" />
+    
+    <!-- Central Chandelier Warm Glow -->
+    <circle cx="800" cy="620" r="22" fill="#ffeaa7" filter="url(#softGlow)" opacity="0.95" />
+    <path d="M 775 620 Q 800 660 825 620" fill="none" stroke="#d4af37" stroke-width="3" />
+    <line x1="800" y1="580" x2="800" y2="620" stroke="#d4af37" stroke-width="2.5" />
+  </g>
+
+  <!-- Hanging Decorative Lanterns & Fairy Curtains -->
+  <g opacity="0.85">
+    <path d="M 300 480 Q 800 560 1300 480" fill="none" stroke="#ffd978" stroke-width="1.5" stroke-dasharray="8 12" />
+    <path d="M 200 520 Q 800 620 1400 520" fill="none" stroke="#ffd978" stroke-width="1.2" stroke-dasharray="6 14" opacity="0.6" />
+  </g>
+
+  <!-- Foreground Atmospheric Vignette Gradient -->
+  <rect width="1600" height="900" fill="url(#centerGlow)" opacity="0.2" />
+</svg>

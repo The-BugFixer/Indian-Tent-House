@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0F0D0B;
+    color: #F5EFE6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Warm royal gold, amber & deep crimson gradient utilities for dark mode */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 35%, #d97706 70%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-light {
+  background: linear-gradient(135deg, #fffbeb 0%, #fde68a 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-royal-gradient {
+  background: linear-gradient(135deg, #fb7185 0%, #f59e0b 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-subtle {
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.border-royal-subtle {
+  border-color: rgba(244, 63, 94, 0.25);
+}
+
+/* Atmospheric elevation shadows with warm gold-amber undertones for dark surfaces */
+.shadow-royal {
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 4px 12px -2px rgba(245, 158, 11, 0.12);
+}
+
+.shadow-royal-lg {
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.75), 0 8px 24px -4px rgba(245, 158, 11, 0.18);
+}
+
+.shadow-royal-card {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 2px 6px -1px rgba(245, 158, 11, 0.06);
+}
+
+/* Subtle Indian Royal filigree dark background aura */
+.bg-royal-mesh {
+  background-color: #0F0D0B;
+  background-image: radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, rgba(225, 29, 72, 0.06) 0px, transparent 50%),
+                    radial-gradient(at 50% 50%, rgba(217, 119, 6, 0.05) 0px, transparent 60%);
+}
+
+/* Hide scrollbar for mobile swipeable pills */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
