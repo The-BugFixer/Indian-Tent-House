@@ -1,0 +1,9 @@
+{
+  "name": "Indian Tent House",
+  "short_name": "Tent House",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#1a0408",
+  "theme_color": "#1a0408",
+  "description": "Royal wedding and event setups in Gorakhpur"
+}
