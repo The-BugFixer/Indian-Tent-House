@@ -18,13 +18,6 @@ Plain HTML + CSS + JavaScript. No build step, no server needed. Double-click `in
 - `G`: gallery cards (`t` title, `m` label, `d` description, `img` photo)
 - `R`: reviews (`n` name, `r` event, `s` stars, `t` text)
 
-## Put it live on GitHub Pages
-1. New repository on github.com (Public).
-2. Upload everything INSIDE this folder (index.html, css, js, images, assets, extras). `index.html` must be at the top level.
-3. Settings > Pages > Deploy from a branch > main / (root) > Save.
-4. Live in 1 to 2 minutes at https://YOUR-USERNAME.github.io/REPO-NAME/
-To update later: open a file on GitHub, click the pencil icon, edit, Commit.
-
 ## Security and privacy notes
 - No cookies, analytics, trackers or database. The enquiry form only builds a WhatsApp message on the visitor's device (see `privacy.html`).
 - `index.html` has a Content-Security-Policy: only your own scripts run, no other site can inject code, no network calls are allowed, and there are no iframes.
