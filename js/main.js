@@ -1,4 +1,4 @@
-/* Indian Tent House ITH-V6: behaviour (parda, 3D ring, build scene, language, forms). No dependencies. */
+/* Indian Tent House ITH-V8: behaviour (parda, 3D ring, build scene, language, forms). No dependencies. */
 (function () {
   'use strict';
   var S = window.SITE, C = S.C, G = S.G, R = S.R;
@@ -75,7 +75,7 @@
 
   /* ---------- dialog ---------- */
   var dlg = $('#dlg'), dlgOpen = false;
-  var labels = { wed: ['Royal Wedding', 'शाही विवाह'], stage: ['Stage & Mandap', 'स्टेज और मंडप'], sang: ['Party & Sangeet', 'पार्टी और संगीत'] };
+  var labels = { wed: ['Royal Wedding', 'शाही विवाह'], stage: ['Stage & Mandap', 'स्टेज और मंडप'], sang: ['Party & Sangeet', 'पार्टी और संगीत'], furn: ['Utensils & Furnishings', 'बर्तन और साज-सामान'] };
   var lbl = function (c) { return labels[c] ? t(labels[c][0], labels[c][1]) : ''; };
   function openDlg(i) {
     var g = G[i];
@@ -90,21 +90,23 @@
   /* ---------- 3D photo ring ---------- */
   var wrap = $('#ringwrap'), ringEl = $('#ring'), cap = $('#rcap'), inView = false;
   var rg = { items: [], n: 0, step: 24, R: 500, ang: 0, tgt: null, vel: 0, drag: false, moved: 0, lx: 0, partial: false, front: -1, hover: false };
+  var ringSrc = function (p) { return String(p).replace(/^images\/([^\/]+)\.\w+$/, 'images/ring/$1.webp'); };
   function buildRing(f) {
     rg.items = G.map(function (g, i) { return { g: g, i: i }; }).filter(function (x) { return f === 'all' || x.g.c === f; });
-    var n = rg.n = rg.items.length, small = innerWidth < 700, cw = small ? 190 : 250, ch = small ? 270 : 340;
-    rg.step = Math.max(360 / n, small ? 26 : 24); rg.partial = rg.step * n < 359.5;
+    var n = rg.n = rg.items.length, small = innerWidth < 700, cw = small ? 190 : 250, ch = small ? 258 : 340;
+    var minStep = small ? 26 : 24; rg.partial = n * minStep < 359.5; rg.step = rg.partial ? minStep : 360 / n;
     rg.R = Math.round((cw / 2) / Math.tan(Math.PI * rg.step / 360)) + (small ? 22 : 36);
     wrap.style.setProperty('--R', rg.R + 'px'); wrap.style.setProperty('--cw', cw + 'px'); wrap.style.setProperty('--ch', ch + 'px');
-    ringEl.innerHTML = rg.items.map(function (x, k) { return '<button class="rc" type="button" data-k="' + k + '" style="--a:' + (k * rg.step) + 'deg" aria-label="' + esc(x.g.t) + '"><img src="' + esc(x.g.img) + '" alt="' + esc(x.g.t) + '" loading="lazy" draggable="false"></button>'; }).join('');
-    rg.ang = 0; rg.tgt = null; rg.vel = 0; rg.front = -1;
+    ringEl.innerHTML = rg.items.map(function (x, k) { return '<button class="rc" type="button" data-k="' + k + '" style="--a:' + (k * rg.step) + 'deg" aria-label="' + esc(x.g.t) + '"><img src="' + esc(ringSrc(x.g.img)) + '" data-o="' + esc(x.g.img) + '" alt="' + esc(x.g.t) + '" decoding="async" draggable="false"></button>'; }).join('');
+    $$('.rc img', ringEl).forEach(function (im) { im.addEventListener('error', function () { if (im.dataset.o && im.getAttribute('src') !== im.dataset.o) { im.src = im.dataset.o; im.parentNode.classList.add('plain'); } }); });
+    rg.ang = 0; rg.tgt = null; rg.vel = 0; rg.front = -1; rg.far = [];
   }
   function frontIdx() { var k = Math.round(-rg.ang / rg.step); return rg.partial ? clamp(k, 0, rg.n - 1) : ((k % rg.n) + rg.n) % rg.n; }
   function goTo(k) { var base = -k * rg.step; if (!rg.partial) base += 360 * Math.round((rg.ang - base) / 360); rg.tgt = base; }
   function step(d) { var k = rg.front + d; goTo(rg.partial ? clamp(k, 0, rg.n - 1) : ((k % rg.n) + rg.n) % rg.n); }
   function renderCap() {
     var x = rg.items[rg.front]; if (!x) return;
-    cap.innerHTML = '<span class="lbl">' + lbl(x.g.c) + ' · ' + esc(x.g.m) + '</span><h3>' + esc(x.g.t) + '</h3><button class="btn btn-gold btn-sm" type="button" id="cv">' + t('View details', 'विवरण देखें') + '</button>';
+    cap.innerHTML = '<span class="lbl">' + lbl(x.g.c) + ' · ' + esc(x.g.m) + '</span><h3>' + esc(x.g.t) + '</h3><button class="btn btn-gold btn-sm" type="button" id="cv">' + t('View details', 'विवरण देखें') + '</button><p class="gnote">' + t('Items for every type of wedding are available.', 'हर प्रकार के विवाह से जुड़ा सामान उपलब्ध है।') + '</p>';
     $('#cv').addEventListener('click', function () { openDlg(x.i); });
   }
   function ringTick() {
@@ -113,8 +115,13 @@
       else if (!rg.drag) { rg.ang += rg.vel; rg.vel *= .94; if (Math.abs(rg.vel) < .01) rg.vel = 0; if (!reduced && !rg.hover && !rg.partial && !dlgOpen) rg.ang -= .035; }
       if (rg.partial) rg.ang = clamp(rg.ang, -(rg.n - 1) * rg.step, 0);
       ringEl.style.setProperty('--ang', rg.ang.toFixed(2) + 'deg');
+      var cards = ringEl.children;
+      for (var i = 0; i < cards.length; i++) {
+        var rel = (((i * rg.step + rg.ang) % 360) + 540) % 360 - 180, far = Math.abs(rel) > 95;
+        if (rg.far[i] !== far) { rg.far[i] = far; cards[i].classList.toggle('far', far); }
+      }
       var k = frontIdx();
-      if (k !== rg.front) { rg.front = k; $$('.rc', ringEl).forEach(function (c, i) { c.classList.toggle('front', i === k); }); renderCap(); }
+      if (k !== rg.front) { rg.front = k; renderCap(); }
     }
     requestAnimationFrame(ringTick);
   }
