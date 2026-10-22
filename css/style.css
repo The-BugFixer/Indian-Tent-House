@@ -81,12 +81,12 @@ background:linear-gradient(180deg,rgba(0,0,0,.42),transparent 24%,transparent 60
 /* ring gallery */
 .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:10px}
 .chip{padding:9px 20px;border:1px solid var(--line);border-radius:999px;font-size:15px;font-weight:600;color:var(--mute);transition:.25s;min-height:42px}.chip:hover{color:var(--gold2);border-color:var(--gold)}.chip.on{background:var(--zari);color:#2a0a10;border-color:transparent}
-.ringwrap{position:relative;height:calc(var(--ch,340px) + 76px);perspective:1700px;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none}.ringwrap.drag{cursor:grabbing}
-.ringwrap::before{content:"";position:absolute;left:50%;top:50%;width:min(720px,100%);height:340px;margin:-170px 0 0 -360px;background:radial-gradient(ellipse,rgba(217,172,74,.18),transparent 66%);pointer-events:none}
-.ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transform:translateZ(calc(var(--R)*-1)) rotateY(var(--ang,0deg))}
-.rc{position:absolute;left:calc(var(--cw)/-2);top:calc(var(--ch)/-2);width:var(--cw);height:var(--ch);transform:rotateY(var(--a)) translateZ(var(--R));backface-visibility:hidden;border-radius:999px 999px 16px 16px;padding:8px;background:var(--zari);box-shadow:0 20px 50px rgba(0,0,0,.55);overflow:hidden;display:block}
-.rc img{width:100%;height:100%;object-fit:cover;border-radius:999px 999px 10px 10px;pointer-events:none;-webkit-user-drag:none}
-.rc.front{box-shadow:0 0 60px rgba(243,217,139,.45),0 20px 50px rgba(0,0,0,.6)}
+.ringwrap{position:relative;height:calc(var(--ch,340px) + 76px);perspective:1700px;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;width:100vw;margin-left:calc(50% - 50vw);background:radial-gradient(ellipse 46% 44% at 50% 50%,rgba(217,172,74,.16),transparent 70%)}.ringwrap.drag{cursor:grabbing}
+.ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transform:translateZ(calc(var(--R)*-1)) rotateY(var(--ang,0deg));will-change:transform}
+.rc{position:absolute;left:calc(var(--cw)/-2);top:calc(var(--ch)/-2);width:var(--cw);height:var(--ch);padding:0;border:0;background:none;display:block;transform:rotateY(var(--a)) translateZ(var(--R))}
+.rc img{display:block;width:100%;height:100%;pointer-events:none;-webkit-user-drag:none}
+.rc.far{visibility:hidden}
+.rc.plain{padding:8px;background:var(--zari);border-radius:999px 999px 16px 16px}.rc.plain img{object-fit:cover;border-radius:999px 999px 10px 10px}
 .rcap{text-align:center;margin-top:4px;min-height:104px}.rcap .lbl{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}.rcap h3{font-size:clamp(20px,2.6vw,28px);margin:6px 0 14px}
 .arrows{display:flex;gap:12px;justify-content:center;align-items:center}.arrow{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold2);font-size:20px}.arrow:hover{background:rgba(217,172,74,.18)}.hintd{font-size:14px;color:var(--mute);text-align:center;margin-top:12px}
 /* build */
@@ -215,3 +215,9 @@ html.has-cur,html.has-cur *{cursor:none!important}html.has-cur input,html.has-cu
 @media (max-width:1000px){.glance ul.gl{grid-template-columns:repeat(2,1fr)}.glance ul.gl li:nth-last-child(-n+3){border-bottom:1px solid rgba(217,172,74,.2)}.glance ul.gl li:nth-last-child(-n+2){border-bottom:0}.glance{margin-top:28px}.archw{margin-top:8px}}
 @media (max-width:620px){.glance ul.gl{grid-template-columns:1fr}.glance ul.gl li:nth-last-child(-n+2){border-bottom:1px solid rgba(217,172,74,.2)}.glance ul.gl li:last-child{border-bottom:0}.journey{grid-template-columns:1fr 1fr;row-gap:8px}.journey .jl{grid-column:1/-1;grid-row:2}.jn:last-child{text-align:right}.halo{width:130%}}
 @media (prefers-reduced-motion:reduce){.halo,.jl::before,.jl i,.wese span,.fl{animation:none}}
+
+/* ===== V8: gallery note ===== */
+.gnote{margin:14px auto 0;max-width:560px;font-size:15px;color:var(--gold2);display:flex;gap:10px;align-items:center;justify-content:center;text-align:center}
+.gnote::before,.gnote::after{content:"";flex:none;width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.rcap{min-height:132px}
+.arrows{margin-top:18px}
