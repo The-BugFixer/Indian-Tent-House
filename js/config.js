@@ -29,7 +29,10 @@ const G=[
  {c:"sang",t:"Sunlit Haldi & Mehendi Yellow Fiesta",m:"Haldi & mehendi",img:"images/haldi.jpg",d:"Golden yellow drapes, chandeliers and fairy lights over a lawn lounge with low seating. Jaali-style panels and floral trays complete the haldi and mehendi look."},
  {c:"sang",t:"Colourful Party Canopy",m:"Party tent",img:"images/ptent.jpg",d:"Layered drapes in orange, red, green and teal under rows of fairy lights, with floor cushions and lanterns below. Made for lively mehendi and party evenings."},
  {c:"sang",t:"Straight Curtain Pandal",m:"Pandal & drapes",img:"images/curtain.jpg",d:"Pink, yellow and white pleated fabric radiates across the ceiling and walls above a red patterned carpet. A bright, welcoming pandal for family functions."},
- {c:"sang",t:"Wedding Celebration Moments",m:"Celebrations",img:"images/about.jpg",d:"Our setups are built for moments like these: guests, music and confetti in the middle of a grand celebration. We handle the setup so your family can enjoy the day."}
+ {c:"sang",t:"Wedding Celebration Moments",m:"Celebrations",img:"images/about.jpg",d:"Our setups are built for moments like these: guests, music and confetti in the middle of a grand celebration. We handle the setup so your family can enjoy the day."},
+ {c:"furn",t:"Wedding Cooking Utensils (Bhagauna)",m:"Bhagauna & utensils range",img:"images/bhagauna.jpg",d:"Hammered copper and brass bhagauna, handis and chafing dishes for Indian wedding catering, available in a wide range for your guest count."},
+ {c:"furn",t:"Wedding Tables & Chairs Range",m:"Tables & chairs",img:"images/tables.jpg",d:"Round banquet tables and gold-finish chairs in a range of styles for lawns, halls and hangars, set in neat layouts for your guests."},
+ {c:"furn",t:"Carpet Range for Every Wedding Vibe",m:"Carpets & runners",img:"images/carpet.jpg",d:"A variety of carpet and aisle-runner styles, from rich red patterns to softer shades, to match the vibe of your wedding."}
 ];
 /* ========= EDIT HERE: reviews ========= */
 const R=[
